@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aspiration & Promises</title>
+  <link rel="stylesheet" href="layout.css">
+
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #fff9f5;
+      font-family: 'Quicksand', sans-serif;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+      background: #ffe8e8;
+    }
+
+    .chat-gallery {
+      background: #fffdfc;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .chat-gallery h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: #e35b8d;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .chat-pic {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .chat-pic img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+      border-radius: 12px;
+    }
+
+    .chat-pic:hover {
+      transform: scale(1.03);
+    }
+
+    .chat-pic:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.05);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1.2rem;
+      background: linear-gradient(to right, #ffe0ec, #ffdde1);
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+    <audio autoplay loop hidden>
+    <source src="song2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <section class="hero">
+    <h1>🌟 Our Hope, Promises & Happiness 🌟</h1>
+    <p style="font-size: 1.1rem;">❣️If you want to know this page is so touching for me,❣️<br> 
+        but here i want to share all the moment in conversations that we had.<br>
+        and i just want to keep all the best conversations that selected here.<br>
+        Kalau ade  masa tu bacalah.This is my favourite conversation with you.❤️‍🩹
+    </p>
+  </section>
+
+  <section class="chat-gallery">
+    <h2>📱 Our Conversations</h2>
+    <div class="gallery-grid">
+
+      <div class="chat-pic">
+        <a href="chat1.jpg" data-lightbox="chat" data-title="You said you'll always be there ❤️">
+          <img src="chat1.jpg" alt="Chat 1">
+        </a>
+      </div>
+
+      <div class="chat-pic">
+        <a href="chat2.jpg" data-lightbox="chat" data-title="The midnight laugh 😂">
+          <img src="chat2.jpg" alt="Chat 2">
+        </a>
+      </div>
+
+      <div class="chat-pic">
+        <a href="chat3.jpg" data-lightbox="chat" data-title="That long conversation we both miss 🌙">
+          <img src="chat3.jpg" alt="Chat 3">
+        </a>
+      </div>
+
+      <div class="chat-pic">
+        <a href="chat4.jpg" data-lightbox="chat" data-title="So many inside jokes 💬">
+          <img src="chat4.jpg" alt="Chat 4">
+        </a>
+      </div>
+
+      <div class="chat-pic">
+        <a href="chat5.jpg" data-lightbox="chat" data-title="A promise made in texts 💌">
+          <img src="chat5.jpg" alt="Chat 5">
+        </a>
+      </div>
+
+      <div class="chat-pic">
+        <a href="chat6.jpg" data-lightbox="chat" data-title="You said you'll always be there ❤️">
+          <img src="chat6.jpg" alt="Chat 1">
+        </a>
+      </div>
+
+      <div class="chat-pic">
+        <a href="chat7.jpg" data-lightbox="chat" data-title="The midnight laugh 😂">
+          <img src="chat7.jpg" alt="Chat 2">
+        </a>
+      </div>
+
+      <div class="chat-pic">
+        <a href="chat8.jpg" data-lightbox="chat" data-title="That long conversation we both miss 🌙">
+          <img src="chat8.jpg" alt="Chat 3">
+        </a>
+      </div>
+
+      <div class="chat-pic">
+        <a href="chat9.jpg" data-lightbox="chat" data-title="So many inside jokes 💬">
+          <img src="chat9.jpg" alt="Chat 4">
+        </a>
+      </div>
+
+      <div class="chat-pic">
+        <a href="chat10.jpg" data-lightbox="chat" data-title="A promise made in texts 💌">
+          <img src="chat10.jpg" alt="Chat 5">
+        </a>
+      </div>
+
+      <div class="chat-pic">
+        <a href="chat11.jpg" data-lightbox="chat" data-title="So many inside jokes 💬">
+          <img src="chat11.jpg" alt="Chat 4">
+        </a>
+      </div>
+
+      <div class="chat-pic">
+        <a href="chat12.jpg" data-lightbox="chat" data-title="A promise made in texts 💌">
+          <img src="chat12.jpg" alt="Chat 5">
+        </a>
+      </div>
+
+      <!-- You can add more screenshots here -->
+    </div>
+  </section>
+
+  <footer>
+    <a href="index.html">⬅️ Back to Home</a>
+  </footer>
+
+  <!-- Lightbox2 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+</body>
+</html>

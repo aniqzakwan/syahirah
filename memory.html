@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cherished Memory</title>
+  <link rel="stylesheet" href="layout.css">
+  <style>
+    body {
+      background: #fff0f8;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      font-family: 'Quicksand', sans-serif;
+      background: #ffdde1;
+    }
+
+    .slideshow-container {
+      max-width: 700px;
+      height: 400px;
+      margin: 2rem auto;
+      position: relative;
+      perspective: 1200px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform: rotateY(180deg);
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+    }
+
+    .slide img,
+    .slide video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: rotateY(0deg);
+      z-index: 2;
+    }
+
+    .memory-caption {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      color: #444;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1rem;
+      background: linear-gradient(to right, #ffe0ec, #ffdde1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎵 Background Music -->
+<audio id="bg-music" loop>
+  <source src="song.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- 👇 Add the Play Button Here -->
+<button id="play-btn" style="
+  margin: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.1rem;
+  border: none;
+  background: #ffb6c1;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+">
+  🎶 Tap to play music
+</button>
+
+<script>
+  const bgMusic = document.getElementById('bg-music');
+  const playBtn = document.getElementById('play-btn');
+
+  playBtn.addEventListener('click', function () {
+    bgMusic.play();
+    playBtn.style.display = 'none';
+  });
+</script>
+
+
+
+  <!-- 💖 Header -->
+  <section class="hero">
+    <h1>🤍 Memori Kita Bersama 🤍</h1>
+    <p style="font-size: 1.2rem;">first and most, saya nak minta maaf jika slideshow ini menganggu perasaan awak.<br>
+        Saya cuma nk menceritakan segala kenangan bersama yang pernah kita lakar dulu.<br> 
+        and second sorry for the quality of a few pictures and videos below.<br>
+         lpstu ii ade gambar yang tercrop muka awak dan gmbr awak nmpak tak full,<br>
+         this is because gmbr dan vid kebykkan hasil dari potrait.so tidak dpt dielakkan.<br>
+        but anything else, here is a few memory that we caught in camera. I hope you enjoy with my slideshow yg tak seberape ni.
+        💞</p>
+  </section>
+
+  <!-- 🎬 Slideshow -->
+  <div class="slideshow-container">
+    <!-- 5 Images -->
+    <div class="slide"><img src="m1.jpg" alt="Memory 1"></div>
+    <div class="slide"><img src="m2.jpg" alt="Memory 2"></div>
+    <div class="slide"><img src="m3.jpg" alt="Memory 3"></div>
+    <div class="slide"><img src="m4.jpg" alt="Memory 4"></div>
+    <div class="slide"><img src="m5.jpg" alt="Memory 5"></div>
+
+    <!-- 1 Video -->
+    <div class="slide">
+      <video autoplay muted loop playsinline>
+        <source src="vid1.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- 2 Images -->
+    <div class="slide"><img src="m6.jpg" alt="Memory 6"></div>
+    <div class="slide"><img src="m7.jpg" alt="Memory 7"></div>
+
+    <!-- 1 Video -->
+    <div class="slide">
+      <video autoplay muted loop playsinline>
+        <source src="vid2.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- 5 Images -->
+    <div class="slide"><img src="m8.jpg" alt="Memory 8"></div>
+    <div class="slide"><img src="m9.jpg" alt="Memory 9"></div>
+    <div class="slide"><img src="m10.jpg" alt="Memory 10"></div>
+    <div class="slide"><img src="m11.jpg" alt="Memory 11"></div>
+    <div class="slide"><img src="m12.jpg" alt="Memory 12"></div>
+
+    <!-- 1 Video -->
+    <div class="slide">
+      <video autoplay muted loop playsinline>
+        <source src="vid3.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- 4 Images -->
+    <div class="slide"><img src="m13.jpg" alt="Memory 13"></div>
+    <div class="slide"><img src="m14.jpg" alt="Memory 14"></div>
+    <div class="slide"><img src="m15.jpg" alt="Memory 15"></div>
+    <div class="slide"><img src="m16.jpg" alt="Memory 16"></div>
+  </div>
+
+  <div class="memory-caption">📸 sweetest memories that i had experinced in my live with beautiful syahirah 🎥</div>
+
+  <!-- 🔙 Back -->
+  <footer>
+    <a href="index.html">⬅️ Back to Home</a>
+  </footer>
+
+  <!-- 📜 Flip Slideshow Script -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlides() {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+        const video = slide.querySelector("video");
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+
+      slideIndex = (slideIndex + 1) % slides.length;
+      const currentSlide = slides[slideIndex];
+      currentSlide.classList.add("active");
+
+      const video = currentSlide.querySelector("video");
+      if (video) video.play();
+
+      setTimeout(showSlides, 4000); // Change every 4s
+    }
+
+    showSlides();
+  </script>
+</body>
+</html>
